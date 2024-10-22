@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+	/** PRIMARY */
+	--clr-lightRed: hsl(356, 100%, 66%);
+	--clr-veryLightRed: hsl(355, 100%, 74%);
+	--clr-veryDarkBlue: hsl(208, 49%, 24%);
+
+	/** NEUTRAL */
+	--clr-white: hsl(0, 0%, 100%);
+	--clr-grayishBlue: hsl(240, 2%, 79%);
+	--clr-veryDarkGrayishBlue: hsl(207, 13%, 34%);
+	--clr-veryDarkBlackBlue: hsl(240, 10%, 16%);
+
+	/** Gradient */
+	--grd-veryLightRed: hsl(13, 100%, 72%);
+	--grd-lightRed: hsl(353, 100%, 62%);
+	--grd-veryDarkGrayBlue: hsl(237, 17%, 21%);
+	--grd-desaturatedBlue: hsl(237, 23%, 32%);
+
+	/** Fonts */
+	--fs-overpass: "Overpass", sans-serif;
+	--fs-ubuntu: "Ubuntu", sans-serif;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Overpass", sans-serif;
+	font-family: "Ubuntu", sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+img {
+	width: 100%;
+}
+
+.hero {
+	background: linear-gradient(var(--grd-lightRed), var(--grd-veryLightRed)),
+		url(../images/bg-pattern-intro-mobile.svg);
+	padding: 2.5rem 1.5rem;
+	min-height: 100svh;
+	border-radius: 0 0 0 6.5rem;
+}
+
+header {
+	justify-self: start;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+nav .logo {
+	max-width: 70px;
+}
+
+.auth {
+	display: none;
+}
+
+.burger {
+	cursor: pointer;
+}
+
+.actual {
+	display: flex;
+	align-items: center;
+	/* min-height: 90svh; */
+}
+
+.hero__actual {
+	display: grid;
+	gap: 1rem;
+}
+
+.actual__head {
+	color: var(--clr-white);
+	font-size: 2rem;
+	font-family: var(--fs-overpass);
+	text-align: center;
+}
+
+.actual__text {
+	color: var(--clr-white);
+	font-size: 1rem;
+	text-align: center;
+}
+
+.actual__ctas-start {
+	color: var(--clr-lightRed);
+	background-color: var(--clr-white);
+	padding: 0.75rem 1rem;
+	border-radius: 25px;
+	font-weight: 700;
+}
+
+.actual__ctas-learn {
+	color: var(--clr-white);
+	background-color: transparent;
+	border: 1px solid var(--clr-white);
+	padding: 0.75rem 1rem;
+	border-radius: 25px;
+	font-weight: 700;
+}
+
+.actual__ctas {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+/* * DESIGNED */
+
+.designed {
+	padding: 3rem 1.5rem;
+}
+
+.designed__head {
+	color: var(--clr-veryDarkBlue);
+	font-family: var(--fs-overpass);
+	text-align: center;
+	padding: 1rem 0;
+}
+
+.designed__grid {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.text1__head,
+.text2__head {
+	color: var(--clr-veryDarkBlue);
+	font-family: var(--fs-overpass);
+	text-align: center;
+	font-size: 1.8rem;
+}
+
+.text1__desc,
+.text2__desc {
+	color: var(--clr-veryDarkGrayishBlue);
+	line-height: 2;
+	text-align: center;
+	font-family: var(--fs-overpass);
+}
+
+/* * STATE */
+
+.state {
+	padding: 3rem 1.5rem;
+	background-color: var(--grd-desaturatedBlue);
+	border-radius: 0 6rem 0 6rem;
+}
+
+.state__head {
+	color: var(--clr-veryDarkBlue);
+	font-family: var(--fs-overpass);
+	text-align: center;
+	padding: 1rem 0;
+}
+
+.text__head {
+	color: var(--clr-white);
+	font-family: var(--fs-overpass);
+}
+
+.text__desc {
+	color: var(--clr-white);
+	font-family: var(--fs-overpass);
+	line-height: 2;
+}
+
+/* * FREE */
+
+.free {
+	padding: 3rem 1.5rem;
+}
+
+.free__text-one h3,
+.free__text-two h3 {
+	color: var(--clr-veryDarkBlue);
+	font-family: var(--fs-overpass);
+	text-align: center;
+	padding: 1rem 0;
+}
+
+.free__text-one p,
+.free__text-two p {
+	color: var(--clr-veryDarkGrayishBlue);
+	line-height: 2;
+	text-align: center;
+	font-family: var(--fs-overpass);
+}
+
+/* * FOOTER */
+
+footer {
+	background-color: var(--clr-veryDarkBlackBlue);
+	border-radius: 0 6rem 0 0;
+}
+
+.footer__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+footer .logo {
+	max-width: 100px;
+}
+
+.footer__links h4 {
+	color: var(--clr-white);
+	padding: 1rem 0;
+	font-size: 1.2rem;
+}
+
+footer .footer__links li {
+	color: var(--clr-white);
+	padding: 0.5rem 0;
+}
+
+@media (min-width: 768px) {
+}
