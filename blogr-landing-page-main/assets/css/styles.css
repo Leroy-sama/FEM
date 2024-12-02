@@ -14,8 +14,8 @@
 	--clr-veryDarkBlackBlue: hsl(240, 10%, 16%);
 
 	/** Gradient */
-	--grd-veryLightRed: hsl(13, 100%, 72%);
-	--grd-lightRed: hsl(353, 100%, 62%);
+	--grd-veryLightRed: hsl(13 100% 72%);
+	--grd-lightRed: hsl(353 100% 62%);
 	--grd-veryDarkGrayBlue: hsl(237, 17%, 21%);
 	--grd-desaturatedBlue: hsl(237, 23%, 32%);
 
@@ -34,13 +34,23 @@
 	list-style: none;
 }
 
+h1,
+h2,
+h3,
+h4 {
+	margin: 0;
+}
+
 img {
 	width: 100%;
 }
 
 .hero {
-	background: linear-gradient(var(--grd-lightRed), var(--grd-veryLightRed)),
-		url(../images/bg-pattern-intro-mobile.svg);
+	background-image: url(../images/bg-pattern-intro-mobile.svg),
+		linear-gradient(var(--grd-lightRed), var(--grd-veryLightRed));
+	background-repeat: no-repeat;
+	/* background-size: cover; */
+	background-position: center;
 	padding: 2.5rem 1.5rem;
 	min-height: 100svh;
 	border-radius: 0 0 0 6.5rem;
@@ -71,7 +81,7 @@ nav .logo {
 .actual {
 	display: flex;
 	align-items: center;
-	/* min-height: 90svh; */
+	min-height: 80svh;
 }
 
 .hero__actual {
@@ -126,6 +136,7 @@ nav .logo {
 	font-family: var(--fs-overpass);
 	text-align: center;
 	padding: 1rem 0;
+	font-size: 1.8rem;
 }
 
 .designed__grid {
@@ -133,12 +144,18 @@ nav .logo {
 	flex-direction: column-reverse;
 }
 
+.grid-textside {
+	display: grid;
+	gap: 1.5rem;
+	margin-bottom: 10em;
+}
+
 .text1__head,
 .text2__head {
 	color: var(--clr-veryDarkBlue);
 	font-family: var(--fs-overpass);
 	text-align: center;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 }
 
 .text1__desc,
@@ -147,6 +164,11 @@ nav .logo {
 	line-height: 2;
 	text-align: center;
 	font-family: var(--fs-overpass);
+	padding: 1.5rem 0;
+}
+
+.grid-image {
+	padding: 2rem 0;
 }
 
 /* * STATE */
@@ -154,7 +176,16 @@ nav .logo {
 .state {
 	padding: 3rem 1.5rem;
 	background-color: var(--grd-desaturatedBlue);
+	background-image: url(../images/bg-pattern-circles.svg);
+	background-size: 120%;
+	background-position: -6.5rem -15rem 0 0;
+	background-repeat: no-repeat;
 	border-radius: 0 6rem 0 6rem;
+}
+
+.state__img img {
+	margin-top: -65%;
+	max-width: 500px;
 }
 
 .state__head {
@@ -167,18 +198,30 @@ nav .logo {
 .text__head {
 	color: var(--clr-white);
 	font-family: var(--fs-overpass);
+	font-size: 2rem;
+	text-align: center;
 }
 
 .text__desc {
 	color: var(--clr-white);
 	font-family: var(--fs-overpass);
 	line-height: 2;
+	text-align: center;
+	padding: 2rem 0;
 }
 
 /* * FREE */
 
 .free {
-	padding: 3rem 1.5rem;
+	padding: 3rem 0;
+}
+.free__img {
+	position: relative;
+	padding: 2rem 0;
+}
+
+.free__text {
+	padding: 0 1.5rem;
 }
 
 .free__text-one h3,
@@ -187,6 +230,7 @@ nav .logo {
 	font-family: var(--fs-overpass);
 	text-align: center;
 	padding: 1rem 0;
+	font-size: 1.5rem;
 }
 
 .free__text-one p,
@@ -195,6 +239,7 @@ nav .logo {
 	line-height: 2;
 	text-align: center;
 	font-family: var(--fs-overpass);
+	padding: 1rem 0;
 }
 
 /* * FOOTER */
@@ -205,6 +250,7 @@ footer {
 }
 
 .footer__wrapper {
+	padding: 2rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -212,18 +258,87 @@ footer {
 
 footer .logo {
 	max-width: 100px;
+	padding: 2rem 0;
 }
 
 .footer__links h4 {
 	color: var(--clr-white);
 	padding: 1rem 0;
 	font-size: 1.2rem;
+	text-align: center;
 }
 
 footer .footer__links li {
 	color: var(--clr-white);
 	padding: 0.5rem 0;
+	text-align: center;
 }
 
 @media (min-width: 768px) {
+	.auth {
+		display: flex;
+	}
+
+	.main-links {
+		display: flex;
+	}
+
+	.auth ul {
+		display: flex;
+		align-items: center;
+	}
+
+	.burger {
+		display: none;
+	}
+
+	.state__img img {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 1024px) {
+	.actual__head {
+		font-size: 4rem;
+	}
+
+	.designed__grid,
+	.state__wrapper,
+	.free__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.text1__head,
+	.text1__desc,
+	.text2__head,
+	.text2__desc {
+		text-align: left;
+	}
+
+	.free__text-one h3,
+	.free__text-two h3,
+	.free__text-one p,
+	.free__text-two p {
+		text-align: left;
+	}
+
+	.footer__wrapper {
+		flex-direction: row;
+		gap: 4rem;
+	}
+
+	.footer__links {
+		display: flex;
+		justify-content: space-between;
+		gap: 2rem;
+	}
+
+	.footer__links h4 {
+		text-align: left;
+	}
+
+	footer .footer__links li {
+		text-align: left;
+	}
 }
