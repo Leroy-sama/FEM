@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+	.hero-content {
+	}
+}
+
+@media (min-width: 1024px) {
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+}
