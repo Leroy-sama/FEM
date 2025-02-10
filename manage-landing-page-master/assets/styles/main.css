@@ -90,6 +90,15 @@ nav ul li:hover > a {
 	font-weight: 400;
 }
 
+.hero-cta {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	color: var(--clr-white);
+	transition: background-color 0.2s ease-in-out;
+}
+
 /* FOOTER */
 
 footer {
